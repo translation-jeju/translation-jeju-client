@@ -5,6 +5,7 @@ import 'package:translation/designsystem/style/ColorStyles.dart';
 import 'package:translation/riverpod/language_provider.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
+import '../designsystem/style/FontStyles.dart';
 import 'RootPage.dart';
 
 class SelectLanguagePage extends ConsumerWidget {
@@ -15,150 +16,154 @@ class SelectLanguagePage extends ConsumerWidget {
     final selectedLanguage = ref.watch(languageProvider);
 
     return Scaffold(
-      backgroundColor: const Color(0xFF00a991),
+      backgroundColor: Colors.white,
       appBar: AppBar(
         centerTitle: true,
         title: Text(
-            AppLocalizations.of(context)?.select_language ?? 'Select Language'),
-        backgroundColor: const Color(0xFF00a991),
+            AppLocalizations.of(context)?.select_language ?? 'Select Language',
+          style: FontStyles.largeTitle,
+        ),
+        backgroundColor: Colors.white,
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Padding(
-              padding: EdgeInsets.all(8.0),
-              child: Text(
-                'Please choose your language.',
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          const Spacer(),
+          const Text(
+            'Please choose your language.',
+            style: TextStyle(
+              fontSize: 18,
+              color: AppColors.black,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          const SizedBox(
+            height: 24,
+          ),
+          // Korean Button
+          Padding(
+            padding:
+                const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
+            child: ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: selectedLanguage == Language.korean
+                    ? Colors.black
+                    : Colors.grey[200],
+                foregroundColor: selectedLanguage == Language.korean
+                    ? Colors.white
+                    : Colors.black87,
+                minimumSize: const Size(200, 50),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(15),
+                ),
+                shadowColor: Colors.teal.withOpacity(0.5),
+                elevation: selectedLanguage == Language.korean ? 10 : 2,
+              ),
+              onPressed: () =>
+                  ref.read(languageProvider.notifier).state = Language.korean,
+              child: const Text(
+                'Korean',
                 style: TextStyle(
                   fontSize: 18,
-                  color: Colors.white,
                   fontWeight: FontWeight.bold,
                 ),
               ),
             ),
-            // Korean Button
-            Padding(
-              padding:
-                  const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
-              child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: selectedLanguage == Language.korean
-                      ? Colors.black
-                      : Colors.grey[200],
-                  foregroundColor: selectedLanguage == Language.korean
-                      ? Colors.white
-                      : Colors.black87,
-                  minimumSize: const Size(200, 50),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(15),
-                  ),
-                  shadowColor: Colors.teal.withOpacity(0.5),
-                  elevation: selectedLanguage == Language.korean ? 10 : 2,
+          ),
+          // English Button
+          Padding(
+            padding:
+                const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
+            child: ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: selectedLanguage == Language.english
+                    ? Colors.black
+                    : Colors.grey[200],
+                foregroundColor: selectedLanguage == Language.english
+                    ? Colors.white
+                    : Colors.black87,
+                minimumSize: const Size(200, 50),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(15),
                 ),
-                onPressed: () =>
-                    ref.read(languageProvider.notifier).state = Language.korean,
-                child: const Text(
-                  'Korean',
-                  style: TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
-                  ),
+                shadowColor: Colors.teal.withOpacity(0.5),
+                elevation: selectedLanguage == Language.english ? 10 : 2,
+              ),
+              onPressed: () => ref.read(languageProvider.notifier).state =
+                  Language.english,
+              child: const Text(
+                'English',
+                style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
                 ),
               ),
             ),
-            // English Button
-            Padding(
-              padding:
-                  const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
-              child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: selectedLanguage == Language.english
-                      ? Colors.black
-                      : Colors.grey[200],
-                  foregroundColor: selectedLanguage == Language.english
-                      ? Colors.white
-                      : Colors.black87,
-                  minimumSize: const Size(200, 50),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(15),
-                  ),
-                  shadowColor: Colors.teal.withOpacity(0.5),
-                  elevation: selectedLanguage == Language.english ? 10 : 2,
+          ),
+          // Nepali Button
+          Padding(
+            padding:
+                const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
+            child: ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: selectedLanguage == Language.nepali
+                    ? Colors.black
+                    : Colors.grey[200],
+                foregroundColor: selectedLanguage == Language.nepali
+                    ? Colors.white
+                    : Colors.black87,
+                minimumSize: const Size(200, 50),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(15),
                 ),
-                onPressed: () => ref.read(languageProvider.notifier).state =
-                    Language.english,
-                child: const Text(
-                  'English',
-                  style: TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
-                  ),
+                shadowColor: Colors.teal.withOpacity(0.5),
+                elevation: selectedLanguage == Language.nepali ? 10 : 2,
+              ),
+              onPressed: () =>
+                  ref.read(languageProvider.notifier).state = Language.nepali,
+              child: const Text(
+                'Nepali',
+                style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
                 ),
               ),
             ),
-            // Nepali Button
-            Padding(
-              padding:
-                  const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
-              child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: selectedLanguage == Language.nepali
-                      ? Colors.black
-                      : Colors.grey[200],
-                  foregroundColor: selectedLanguage == Language.nepali
-                      ? Colors.white
-                      : Colors.black87,
-                  minimumSize: const Size(200, 50),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(15),
-                  ),
-                  shadowColor: Colors.teal.withOpacity(0.5),
-                  elevation: selectedLanguage == Language.nepali ? 10 : 2,
+          ),
+          // Indonesian Button
+          Padding(
+            padding:
+                const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
+            child: ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: selectedLanguage == Language.indonesian
+                    ? Colors.black
+                    : Colors.grey[200],
+                foregroundColor: selectedLanguage == Language.indonesian
+                    ? Colors.white
+                    : Colors.black87,
+                minimumSize: const Size(200, 50),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(15),
                 ),
-                onPressed: () =>
-                    ref.read(languageProvider.notifier).state = Language.nepali,
-                child: const Text(
-                  'Nepali',
-                  style: TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
-                  ),
+                shadowColor: Colors.teal.withOpacity(0.5),
+                elevation: selectedLanguage == Language.indonesian ? 10 : 2,
+              ),
+              onPressed: () => ref.read(languageProvider.notifier).state =
+                  Language.indonesian,
+              child: const Text(
+                'Indonesian',
+                style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
                 ),
               ),
             ),
-            // Indonesian Button
-            Padding(
-              padding:
-                  const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
-              child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: selectedLanguage == Language.indonesian
-                      ? Colors.black
-                      : Colors.grey[200],
-                  foregroundColor: selectedLanguage == Language.indonesian
-                      ? Colors.white
-                      : Colors.black87,
-                  minimumSize: const Size(200, 50),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(15),
-                  ),
-                  shadowColor: Colors.teal.withOpacity(0.5),
-                  elevation: selectedLanguage == Language.indonesian ? 10 : 2,
-                ),
-                onPressed: () => ref.read(languageProvider.notifier).state =
-                    Language.indonesian,
-                child: const Text(
-                  'Indonesian',
-                  style: TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ),
-            ),
-
-            CustomButton(
+          ),
+          const Spacer(),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 25.0),
+            child: CustomButton(
                 label: '다음',
                 color: AppColors.mainColor,
                 textColor: Colors.white,
@@ -167,9 +172,12 @@ class SelectLanguagePage extends ConsumerWidget {
                     context,
                     MaterialPageRoute(builder: (context) => RootPage()),
                   );
-                })
-          ],
-        ),
+                }),
+          ),
+          const SizedBox(
+            height: 20,
+          )
+        ],
       ),
     );
   }

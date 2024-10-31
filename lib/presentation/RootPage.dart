@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:translation/designsystem/style/ColorStyles.dart';
 import 'package:translation/presentation/ListPage.dart';
 import 'package:translation/presentation/SelectLanguagePage.dart';
 import 'package:translation/presentation/TranslationPage.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:flutter_svg/svg.dart';
 
+import '../designsystem/style/FontStyles.dart';
 import 'MyWordPage.dart';
 
 var indexProvider = StateProvider((ref) => 0);
@@ -20,18 +23,24 @@ class RootPage extends ConsumerWidget {
         scrolledUnderElevation: 0,
         automaticallyImplyLeading: false,
         backgroundColor: Colors.white,
-        centerTitle: true,
-        title: Text('무사허우꽈'),
+        title: const Text(
+          '무사허우꽈?',
+          style: FontStyles.largeTitle,
+        ),
         actions: [
           IconButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => const SelectLanguagePage()),
-                );
-              },
-              icon: Icon(Icons.settings))
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => const SelectLanguagePage()),
+              );
+            },
+            icon: const Icon(
+              Icons.settings_outlined,
+              color: AppColors.darkText,
+            ),
+          )
         ],
       ),
       body: IndexedStack(
@@ -56,19 +65,20 @@ class RootPage extends ConsumerWidget {
           currentIndex: ref.watch(indexProvider),
           items: [
             BottomNavigationBarItem(
-              icon: Icon(Icons.home),
-              activeIcon: Icon(Icons.home_filled),
+               icon: SvgPicture.asset('assets/images/ic_translate_unfill.svg'),
+              activeIcon:
+                  SvgPicture.asset('assets/images/ic_translate_fill.svg'),
               label: AppLocalizations.of(context)?.translation ?? 'Translation',
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.wordpress),
-              activeIcon: Icon(Icons.wordpress_outlined),
+             icon: SvgPicture.asset('assets/images/ic_list_unfill.svg'),
+              activeIcon: SvgPicture.asset('assets/images/ic_list_fill.svg'),
               label:
                   AppLocalizations.of(context)?.conversation ?? 'Conversation',
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.translate),
-              activeIcon: Icon(Icons.translate_outlined),
+              icon: SvgPicture.asset('assets/images/ic_my_word_unfill.svg'),
+              activeIcon: SvgPicture.asset('assets/images/ic_my_word_fill.svg'),
               label: AppLocalizations.of(context)?.vocabulary ?? 'Vocabulary',
             ),
           ],
