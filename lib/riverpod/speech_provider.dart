@@ -29,8 +29,8 @@ class SpeechNotifier extends ChangeNotifier {
         return 'ko_KR';
       case Language.english:
         return 'en_US';
-      case Language.nepali:
-        return 'ne_NP';
+      case Language.chinese:
+        return 'zh_CN';
       case Language.indonesian:
         return 'id_ID';
       default:

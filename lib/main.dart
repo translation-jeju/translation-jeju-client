@@ -33,7 +33,7 @@ class TranslationApp extends ConsumerWidget {
         // 다언어 설정
         Locale('ko', ''), //한국어
         Locale('en', ''), //영어
-        Locale('ne', ''), //네팔어
+        Locale('zh', ''), //중국어
         Locale('id', ''), //인도네시아어
       ],
       locale: locale,

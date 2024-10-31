@@ -1,7 +1,7 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter/material.dart';
 
-enum Language { korean, english, nepali, indonesian }
+enum Language { korean, english, chinese, indonesian }
 
 final languageProvider = StateProvider<Language?>((ref) => null);
 
@@ -11,8 +11,8 @@ Locale getLocaleFromLanguage(Language language) {
       return const Locale('ko');
     case Language.english:
       return const Locale('en');
-    case Language.nepali:
-      return const Locale('ne');
+    case Language.chinese:
+      return const Locale('zh');
     case Language.indonesian:
       return const Locale('id');
     default:
