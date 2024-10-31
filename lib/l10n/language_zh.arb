@@ -1,0 +1,31 @@
+{
+  "hello": "你好",
+  "select_language": "选择语言",
+  "all_language": "所有语言",
+  "korean": "韩语",
+  "indonesian": "印尼语",
+  "chinese": "普通话",
+  "jeju_language": "济州语",
+  "translation": "翻译",
+  "conversation": "济州方言",
+  "vocabulary": "词汇书",
+
+  "press_the_button_and_speak": "按下按钮并说话...",
+  "what_are_you_looking_for": "你要买什么？",
+  "last_one_remaining": "还剩下最后一件事。",
+  "hurry_up_and_come": "不要犹豫，快来吧。",
+  "come_see": "快来看看。",
+  "hurry_up": "快来吧。",
+  "classify_fish": "对鱼进行分类。",
+  "try_again": "再试一次。",
+  "try_gradually": "一点一点地尝试就好了。",
+  "let_us_pick_citrus": "我们去摘橘子吧。",
+  "potatoes_stacked": "土豆堆得很好。",
+  "goodbye": "我们走吧。",
+  "where_from": "你从哪来？",
+  "enjoy_meal": "慢慢吃，吃很多。",
+  "great_job": "非常感谢您的辛勤工作。",
+  "welcome": "欢迎。",
+
+  "restaurant": "餐厅"
+}
