@@ -1,53 +1,62 @@
 import 'package:flutter/material.dart';
+import 'package:translation/designsystem/style/FontStyles.dart';
 
-class CustomListTile extends StatefulWidget {
-  final String word;
+class CustomListTile extends StatelessWidget {
+  final String appWord;
+  final String jejuWord;
   final Function() bookmark;
   final Function() sound;
 
-  const CustomListTile(
-      {super.key,
-        required this.word,
-        required this.bookmark,
-        required this.sound});
+  const CustomListTile({
+    super.key,
+    required this.appWord,
+    required this.jejuWord,
+    required this.bookmark,
+    required this.sound,
+  });
 
-  @override
-  State<CustomListTile> createState() => _CustomListTileState();
-}
-
-class _CustomListTileState extends State<CustomListTile> {
   @override
   Widget build(BuildContext context) {
-    final isLongWord = widget.word.length > 10;
 
-    return GestureDetector(
-      onTap: () {
-        if(isLongWord) {
-
-        }
-      },
-      child: Container(
-        color: Colors.white,
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8),
-          child: Row(
-            children: [
-              Expanded(
-                child: Text(
-                  widget.word,
-                  overflow: TextOverflow.ellipsis,
-                  maxLines: 2,
-                  softWrap: false,
+    return Container(
+      color: Colors.white,
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 12.0, vertical: 12),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(bottom: 10.0),
+              child: Text(
+                appWord,
+                overflow: TextOverflow.ellipsis,
+                maxLines: 1,
+                softWrap: false,
+                style: FontStyles.smallBody,
+              ),
+            ),
+            Row(
+              children: [
+                Expanded(
+                  child: Text(
+                    jejuWord,
+                    overflow: TextOverflow.ellipsis,
+                    maxLines: 1,
+                    softWrap: false,
+                    style: FontStyles.smallBody,
+                  ),
                 ),
-              ),
-              Spacer(),
-              GestureDetector(onTap: widget.bookmark, child: Icon(Icons.delete)),
-              Padding(
-                padding: const EdgeInsets.only(left: 5.0),
-                child: GestureDetector(onTap: widget.sound, child: Icon(Icons.delete)),
-              ),
-            ],
-          ),
+                const Spacer(),
+                GestureDetector(
+                    onTap: bookmark, child: Icon(Icons.speaker)),
+                Padding(
+                  padding: const EdgeInsets.only(left: 10.0),
+                  child: GestureDetector(
+                      onTap: sound, child: Icon(Icons.bookmark)),
+                ),
+              ],
+            ),
+          ],
         ),
       ),
     );
