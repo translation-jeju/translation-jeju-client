@@ -8,6 +8,7 @@ import 'package:translation/designsystem/component/CustomCard.dart';
 import '../designsystem/style/ColorStyles.dart';
 import '../riverpod/word_provider.dart';
 
+
 class MyWordPage extends ConsumerWidget {
   const MyWordPage({super.key});
 
@@ -22,21 +23,20 @@ class MyWordPage extends ConsumerWidget {
         appBar: null,
         body: cards.when(
           data: (cards) {
-            List<Map<String, String>> card = cards;
             return Padding(
               padding: const EdgeInsets.all(20.0),
               child: Column(
                 children: [
                   Expanded(
                     child: PageView.builder(
-                      itemCount: card.length,
+                      itemCount: cards.length,
                       itemBuilder: (context, index) {
                         return FlipCard(
                           fill: Fill.fillBack,
                           direction: FlipDirection.HORIZONTAL,
                           side: CardSide.FRONT,
-                          front: BookmarkCard(text: card[index]['front']!),
-                          back: BookmarkCard(text: card[index]['back']!),
+                          front: BookmarkCard(text: cards[index]['front']!),
+                          back: BookmarkCard(text: cards[index]['back']!),
                         );
                       },
                     ),
@@ -48,7 +48,9 @@ class MyWordPage extends ConsumerWidget {
                       children: [
                         InkWell(
                           onTap: () {},
-                          child: SvgPicture.asset('assets/images/ic_volume_black.svg', color: AppColors.mainColor,),
+                          child: SvgPicture.asset('assets/images/ic_volume_black.svg',
+                            colorFilter: ColorFilter.mode(AppColors.mainColor, BlendMode.srcIn),
+                          ),
                         ),
                         const SizedBox(
                           width: 12,
