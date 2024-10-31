@@ -36,29 +36,48 @@ import 'package:http/http.dart' as http;
 //   }
 // }
 
-class BookmarkServices {
-  Future<List<Map<String, String>>> getBookmark() async {
-    final baseUrl = dotenv.get("BASE_URL");
-    final url = Uri.parse('${baseUrl}/api/store/find-all');
+// class BookmarkServices {
+//   Future<List<Map<String, String>>> getBookmark() async {
+//     final baseUrl = dotenv.get("BASE_URL");
+//     final url = Uri.parse('${baseUrl}/api/store/find-all');
+//
+//     final response = await http.get(url);
+//
+//     if (response.statusCode == 200) {
+//       // JSON 배열을 List<dynamic>으로 디코드
+//       final List<dynamic> jsonData = jsonDecode(response.body);
+//
+//       // List<Map<String, String>>로 변환
+//       final List<Map<String, String>> result = List<Map<String, String>>.from(
+//           jsonData.map((item) => Map<String, String>.from(item))
+//       );
+//
+//       print(result);
+//       return result;
+//     } else {
+//       throw Exception('다시 시도해주세요');
+//     }
+//   }
+// }
 
-    final response = await http.get(url);
+Future<List<Map<String, String>>> getBookmark() async {
+  final baseUrl = dotenv.get("BASE_URL");
+  final url = Uri.parse('${baseUrl}/api/store/find-all');
 
-    if (response.statusCode == 200) {
-      // JSON 배열을 List<dynamic>으로 디코드
-      final List<dynamic> jsonData = jsonDecode(response.body);
+  final response = await http.get(url);
 
-      // List<Map<String, String>>로 변환
-      final List<Map<String, String>> result = List<Map<String, String>>.from(
-          jsonData.map((item) => Map<String, String>.from(item))
-      );
+  if (response.statusCode == 200) {
+    // JSON 배열을 List<dynamic>으로 디코드
+    final List<dynamic> jsonData = jsonDecode(response.body);
 
-      print(result);
-      return result;
-    } else {
-      throw Exception('다시 시도해주세요');
-    }
+    // List<Map<String, String>>로 변환
+    final List<Map<String, String>> result = List<Map<String, String>>.from(
+        jsonData.map((item) => Map<String, String>.from(item))
+    );
+
+    print(result);
+    return result;
+  } else {
+    throw Exception('다시 시도해주세요');
   }
 }
-
-
-final bookmarkProvider = Provider((ref) => BookmarkServices());

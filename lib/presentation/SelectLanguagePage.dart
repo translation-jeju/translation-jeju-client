@@ -38,7 +38,7 @@ class SelectLanguagePage extends ConsumerWidget {
             ),
           ),
           const SizedBox(
-            height: 24,
+            height: 48,
           ),
           // Korean Button
           Padding(
@@ -47,14 +47,14 @@ class SelectLanguagePage extends ConsumerWidget {
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(
                 backgroundColor: selectedLanguage == Language.korean
-                    ? Colors.black
+                    ? AppColors.subColor
                     : Colors.grey[200],
                 foregroundColor: selectedLanguage == Language.korean
-                    ? Colors.white
+                    ? AppColors.darkText
                     : Colors.black87,
-                minimumSize: const Size(200, 50),
+                minimumSize: const Size.fromHeight(50),
                 shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(15),
+                  borderRadius: BorderRadius.circular(30),
                 ),
                 shadowColor: Colors.teal.withOpacity(0.5),
                 elevation: selectedLanguage == Language.korean ? 10 : 2,
@@ -77,14 +77,14 @@ class SelectLanguagePage extends ConsumerWidget {
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(
                 backgroundColor: selectedLanguage == Language.english
-                    ? Colors.black
+                    ? AppColors.subColor
                     : Colors.grey[200],
                 foregroundColor: selectedLanguage == Language.english
-                    ? Colors.white
+                    ? AppColors.darkText
                     : Colors.black87,
-                minimumSize: const Size(200, 50),
+                minimumSize: const Size.fromHeight(50),
                 shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(15),
+                  borderRadius: BorderRadius.circular(30),
                 ),
                 shadowColor: Colors.teal.withOpacity(0.5),
                 elevation: selectedLanguage == Language.english ? 10 : 2,
@@ -107,14 +107,14 @@ class SelectLanguagePage extends ConsumerWidget {
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(
                 backgroundColor: selectedLanguage == Language.chinese
-                    ? Colors.black
+                    ? AppColors.subColor
                     : Colors.grey[200],
                 foregroundColor: selectedLanguage == Language.chinese
-                    ? Colors.white
+                    ? AppColors.darkText
                     : Colors.black87,
-                minimumSize: const Size(200, 50),
+                minimumSize: const Size.fromHeight(50),
                 shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(15),
+                  borderRadius: BorderRadius.circular(30),
                 ),
                 shadowColor: Colors.teal.withOpacity(0.5),
                 elevation: selectedLanguage == Language.chinese ? 10 : 2,
@@ -137,14 +137,14 @@ class SelectLanguagePage extends ConsumerWidget {
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(
                 backgroundColor: selectedLanguage == Language.indonesian
-                    ? Colors.black
+                    ? AppColors.subColor
                     : Colors.grey[200],
                 foregroundColor: selectedLanguage == Language.indonesian
-                    ? Colors.white
+                    ? AppColors.darkText
                     : Colors.black87,
-                minimumSize: const Size(200, 50),
+                minimumSize: const Size.fromHeight(50),
                 shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(15),
+                  borderRadius: BorderRadius.circular(30),
                 ),
                 shadowColor: Colors.teal.withOpacity(0.5),
                 elevation: selectedLanguage == Language.indonesian ? 10 : 2,
@@ -160,11 +160,13 @@ class SelectLanguagePage extends ConsumerWidget {
               ),
             ),
           ),
-          const Spacer(),
+          SizedBox(
+            height: 48,
+          ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 25.0),
             child: CustomButton(
-                label: '다음',
+                label: AppLocalizations.of(context)?.done ?? 'Done',
                 color: AppColors.mainColor,
                 textColor: Colors.white,
                 onPressed: () {
@@ -174,9 +176,7 @@ class SelectLanguagePage extends ConsumerWidget {
                   );
                 }),
           ),
-          const SizedBox(
-            height: 20,
-          )
+          Spacer(),
         ],
       ),
     );
