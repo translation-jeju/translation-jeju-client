@@ -35,8 +35,8 @@ class MyWordPage extends ConsumerWidget {
                           fill: Fill.fillBack,
                           direction: FlipDirection.HORIZONTAL,
                           side: CardSide.FRONT,
-                          front: BookmarkCard(text: cards[index]['front']!),
-                          back: BookmarkCard(text: cards[index]['back']!),
+                          front: BookmarkCard(text: cards[index]['front']!, order: '${index + 1}/${cards.length}',),
+                          back: BookmarkCard(text: cards[index]['back']!, order: '${index + 1}/${cards.length}'),
                         );
                       },
                     ),
@@ -47,7 +47,8 @@ class MyWordPage extends ConsumerWidget {
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
                         InkWell(
-                          onTap: () {},
+                          onTap: () {
+                          },
                           child: SvgPicture.asset('assets/images/ic_volume_black.svg',
                             colorFilter: ColorFilter.mode(AppColors.mainColor, BlendMode.srcIn),
                           ),
