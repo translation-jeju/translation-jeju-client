@@ -27,5 +27,9 @@
   "great_job": "Thank you for your hard work.",
   "welcome": "Welcome.",
 
-  "restaurant": "Restaurant"
+  "restaurant": "Restaurant",
+
+  "greetings": "Greetings",
+  "daily_life_work": "Daily Life/Work",
+  "shopping": "Shopping"
 }

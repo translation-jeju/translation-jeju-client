@@ -27,5 +27,8 @@
   "great_job": "수고하셨습니다.",
   "welcome": "환영합니다.",
 
-  "restaurant": "식당"
+  "restaurant": "식당",
+  "greetings": "인사말",
+  "daily_life_work": "생활/업무",
+  "shopping": "쇼핑"
 }

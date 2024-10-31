@@ -61,43 +61,37 @@ class _ListPageState extends ConsumerState<ListPage> {
                   ExpansionTile(
                     backgroundColor: AppColors.subColor,
                     collapsedBackgroundColor: AppColors.subColor,
-                    title: const Text(
-                      '인사말',
+                    title: Text(
+                      AppLocalizations.of(context)?.greetings ??'인사말',
                       style: FontStyles.smallBody,
                     ),
                     children: [
                       CustomListTile(
-                        appWord: AppLocalizations.of(context)?.hello ?? 'Hello',
-                        jejuWord: '펜안 하우꽈?',
-                        sound: () => _speakText('펜안 하우꽈?'),
-                        bookmark: () {},
-                      ),
-                      CustomListTile(
-                        appWord: AppLocalizations.of(context)?.hello ?? 'Hello',
+                        appWord: AppLocalizations.of(context)?.welcome ?? 'Welcome',
                         jejuWord: '혼저 옵서예',
                         sound: () => _speakText('혼저 옵서예'),
                         bookmark: () {},
                       ),
                       CustomListTile(
-                        appWord: AppLocalizations.of(context)?.hello ?? 'Hello',
+                        appWord: AppLocalizations.of(context)?.great_job ?? 'Great job',
                         jejuWord: '폭삭 속암수다',
                         sound: () => _speakText('폭삭 속암수다'),
                         bookmark: () {},
                       ),
                       CustomListTile(
-                        appWord: AppLocalizations.of(context)?.hello ?? 'Hello',
+                        appWord: AppLocalizations.of(context)?.enjoy_meal ?? 'Enjoy your meal',
                         jejuWord: '도르멍 하영 가쿠다',
                         sound: () => _speakText('도르멍 하영 가쿠다'),
                         bookmark: () {},
                       ),
                       CustomListTile(
-                        appWord: AppLocalizations.of(context)?.hello ?? 'Hello',
+                        appWord: AppLocalizations.of(context)?.where_from ?? 'Where are you from?',
                         jejuWord: '어디서 옵데가?',
                         sound: () => _speakText('어디서 옵데가?'),
                         bookmark: () {},
                       ),
                       CustomListTile(
-                        appWord: AppLocalizations.of(context)?.hello ?? 'Hello',
+                        appWord: AppLocalizations.of(context)?.goodbye ?? 'Goodbye',
                         jejuWord: '게로마씸',
                         sound: () => _speakText('게로마씸'),
                         bookmark: () {},
@@ -107,43 +101,43 @@ class _ListPageState extends ConsumerState<ListPage> {
                   ExpansionTile(
                     backgroundColor: AppColors.subColor,
                     collapsedBackgroundColor: AppColors.subColor,
-                    title: const Text(
-                      '생활/업무',
+                    title: Text(
+                      AppLocalizations.of(context)?.daily_life_work ??'생활/업무',
                       style: FontStyles.smallBody,
                     ),
                     children: [
                       CustomListTile(
-                        appWord: AppLocalizations.of(context)?.hello ?? 'Hello',
+                        appWord: AppLocalizations.of(context)?.potatoes_stacked ?? 'The potatoes are stacked well',
                         jejuWord: '감저 저곡 해놨수다',
                         sound: () => _speakText('감저 저곡 해놨수다'),
                         bookmark: () {},
                       ),
                       CustomListTile(
-                        appWord: AppLocalizations.of(context)?.hello ?? 'Hello',
+                        appWord: AppLocalizations.of(context)?.let_us_pick_citrus ?? 'Let us go pick citrus.',
                         jejuWord: '감결 딸라감쪄',
                         sound: () => _speakText('감결 딸라감쪄'),
                         bookmark: () {},
                       ),
                       CustomListTile(
-                        appWord: AppLocalizations.of(context)?.hello ?? 'Hello',
+                        appWord: AppLocalizations.of(context)?.try_gradually ?? 'It is good to try gradually',
                         jejuWord: '호꼼 씹서 해보난 좋수다',
                         sound: () => _speakText('호꼼 씹서 해보난 좋수다'),
                         bookmark: () {},
                       ),
                       CustomListTile(
-                        appWord: AppLocalizations.of(context)?.hello ?? 'Hello',
+                        appWord: AppLocalizations.of(context)?.try_again ?? 'Try again',
                         jejuWord: '고다시 가수다',
                         sound: () => _speakText('고다시 가수다'),
                         bookmark: () {},
                       ),
                       CustomListTile(
-                        appWord: AppLocalizations.of(context)?.hello ?? 'Hello',
+                        appWord: AppLocalizations.of(context)?.classify_fish ?? 'Classify the fish',
                         jejuWord: '생이 갈라줘',
                         sound: () => _speakText('생이 갈라줘'),
                         bookmark: () {},
                       ),
                       CustomListTile(
-                        appWord: AppLocalizations.of(context)?.hello ?? 'Hello',
+                        appWord: AppLocalizations.of(context)?.hurry_up ?? 'Hurry up',
                         jejuWord: '혼저혼저 오라게',
                         sound: () => _speakText('혼저혼저 오라게'),
                         bookmark: () {},
@@ -153,31 +147,31 @@ class _ListPageState extends ConsumerState<ListPage> {
                   ExpansionTile(
                     backgroundColor: AppColors.subColor,
                     collapsedBackgroundColor: AppColors.subColor,
-                    title: const Text(
-                      '쇼핑',
+                    title: Text(
+                      AppLocalizations.of(context)?.shopping ?? '쇼핑',
                       style: FontStyles.smallBody,
                     ),
                     children: [
                       CustomListTile(
-                        appWord: AppLocalizations.of(context)?.hello ?? 'Hello',
+                        appWord: AppLocalizations.of(context)?.come_see ?? 'Come and see',
                         jejuWord: '왕방갑서',
                         sound: () => _speakText('왕방갑서'),
                         bookmark: () {},
                       ),
                       CustomListTile(
-                        appWord: AppLocalizations.of(context)?.hello ?? 'Hello',
+                        appWord: AppLocalizations.of(context)?.hurry_up_and_come ?? 'Hurry up and come',
                         jejuWord: '몽케지 마랑 혼저 오라게',
                         sound: () => _speakText('몽케지 마랑 혼저 오라게'),
                         bookmark: () {},
                       ),
                       CustomListTile(
-                        appWord: AppLocalizations.of(context)?.hello ?? 'Hello',
+                        appWord: AppLocalizations.of(context)?.last_one_remaining ?? 'There is one last one remaining',
                         jejuWord: '매기 우다',
                         sound: () => _speakText('매기 우다'),
                         bookmark: () {},
                       ),
                       CustomListTile(
-                        appWord: AppLocalizations.of(context)?.hello ?? 'Hello',
+                        appWord: AppLocalizations.of(context)?.what_are_you_looking_for ?? 'What are you looking for?',
                         jejuWord: '무신거 촞암수과',
                         sound: () => _speakText('무신거 촞암수과'),
                         bookmark: () {},

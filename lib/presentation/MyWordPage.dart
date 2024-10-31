@@ -1,7 +1,10 @@
 import 'package:flip_card/flip_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:translation/designsystem/component/CustomCard.dart';
+
+import '../designsystem/style/ColorStyles.dart';
 
 class MyWordPage extends ConsumerWidget {
   const MyWordPage({super.key});
@@ -39,14 +42,13 @@ class MyWordPage extends ConsumerWidget {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(top: 16.0),
+                padding: const EdgeInsets.only(top: 16.0, bottom: 50.0),
                 child: Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     InkWell(
                       onTap: () {},
-                      child: const Icon(
-                        Icons.speaker,
-                      ),
+                      child: SvgPicture.asset('assets/images/ic_volume_black.svg', color: AppColors.mainColor,),
                     ),
                     const SizedBox(
                       width: 12,
@@ -55,6 +57,7 @@ class MyWordPage extends ConsumerWidget {
                       onTap: () {},
                       child: const Icon(
                         Icons.bookmark,
+                        color: AppColors.mainColor,
                       ),
                     ),
                   ],
