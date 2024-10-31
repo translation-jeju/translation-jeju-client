@@ -4,7 +4,7 @@ import 'package:translation/presentation/ListPage.dart';
 import 'package:translation/presentation/SelectLanguagePage.dart';
 import 'package:translation/presentation/TranslationPage.dart';
 
-import 'WordPage.dart';
+import 'MyWordPage.dart';
 
 var indexProvider = StateProvider((ref) => 0);
 
@@ -38,7 +38,7 @@ class RootPage extends ConsumerWidget {
         children: [
           TranslationPage(),
           ListPage(),
-          WordPage(),
+          MyWordPage(),
         ],
       ),
       bottomNavigationBar: Theme(

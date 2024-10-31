@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:translation/presentation/SelectLanguagePage.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -7,7 +8,7 @@ import 'package:intl/intl.dart';
 import 'package:translation/riverpod/language_provider.dart';
 
 void main() async {
-  //await dotenv.load(fileName: 'assets/config/.env');
+  await dotenv.load(fileName: 'assets/config/.env');
 
   runApp(const ProviderScope(child: TranslationApp()));
 }
