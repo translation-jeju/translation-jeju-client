@@ -12,5 +12,28 @@ void showToast(String msg) {
   );
 }
 
-
+void showSnackBar(BuildContext context, String message) {
+  ScaffoldMessenger.of(context)
+    ..hideCurrentSnackBar()
+    ..showSnackBar(
+      SnackBar(
+        backgroundColor: const Color(0xFFECECEC),
+        content: Text(message),
+        duration: const Duration(seconds: 1),
+        shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(20),
+            topRight: Radius.circular(20),
+          ),
+        ),
+        action: SnackBarAction(
+          label: "확인",
+          textColor: const Color(0xFF404040),
+          onPressed: () {
+            ScaffoldMessenger.of(context).hideCurrentSnackBar();
+          },
+        ),
+      ),
+    );
+}
 
