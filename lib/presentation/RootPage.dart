@@ -58,6 +58,8 @@ class RootPage extends ConsumerWidget {
         ),
         child: BottomNavigationBar(
           type: BottomNavigationBarType.fixed,
+          selectedItemColor: AppColors.mainColor,
+          unselectedLabelStyle: FontStyles.smallBody.copyWith(color: AppColors.subText),
           backgroundColor: Colors.white,
           onTap: (index) {
             ref.read(indexProvider.notifier).state = index;

@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:translation/designsystem/style/FontStyles.dart';
+
+import '../style/ColorStyles.dart';
 
 class CustomListTile extends StatelessWidget {
   final String appWord;
@@ -48,7 +51,7 @@ class CustomListTile extends StatelessWidget {
                 ),
                 const Spacer(),
                 GestureDetector(
-                    onTap: sound, child: Icon(Icons.speaker)),
+                    onTap: sound, child: SvgPicture.asset('assets/images/ic_volume_black.svg', color: AppColors.darkText,),),
                 Padding(
                   padding: const EdgeInsets.only(left: 10.0),
                   child: GestureDetector(

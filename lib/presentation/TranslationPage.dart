@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:translation/data/repository/TranslationRepository.dart';
 import 'package:translation/designsystem/style/ColorStyles.dart';
 import 'package:translation/riverpod/language_provider.dart';
@@ -60,7 +61,7 @@ class _TranslationPageState extends ConsumerState<TranslationPage> {
                     // 음성 인식 시작/정지 버튼
                     Row(
                       children: [
-                        InkWell(onTap: () {}, child: Icon(Icons.speaker)),
+                        InkWell(onTap: () {}, child: SvgPicture.asset('assets/images/ic_volume_black.svg'),),
                         const Spacer(),
                         Padding(
                           padding: const EdgeInsets.only(right: 10.0),
@@ -177,10 +178,7 @@ class _TranslationPageState extends ConsumerState<TranslationPage> {
                             await postTranslation(speechNotifier.text,
                                 selectedLanguage.toString());
                           },
-                          child: const Icon(
-                            Icons.speaker,
-                            color: Colors.white,
-                          ),
+                          child: SvgPicture.asset('assets/images/ic_volume_black.svg', color: Colors.white,),
                         ),
                         const Spacer(),
                         Padding(
@@ -188,7 +186,7 @@ class _TranslationPageState extends ConsumerState<TranslationPage> {
                           child: Text(
                             AppLocalizations.of(context)?.jeju_language ??
                                 'Jeju language',
-                            style: FontStyles.mediumBody,
+                            style: FontStyles.mediumBody.copyWith(color: Colors.white),
                           ),
                         ),
                         InkWell(
