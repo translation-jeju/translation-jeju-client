@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:translation/presentation/ListPage.dart';
+import 'package:translation/presentation/SelectLanguagePage.dart';
 import 'package:translation/presentation/SettingPage.dart';
 import 'package:translation/presentation/TranslationPage.dart';
 
@@ -26,7 +27,7 @@ class RootPage extends ConsumerWidget {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => SettingPage()),
+                  MaterialPageRoute(builder: (context) => const SelectLanguagePage()),
                 );
               },
               icon: Icon(Icons.settings))
@@ -61,12 +62,12 @@ class RootPage extends ConsumerWidget {
             BottomNavigationBarItem(
               icon: Icon(Icons.wordpress),
               activeIcon: Icon(Icons.wordpress_outlined),
-              label: '단어장',
+              label: '상황별 리스트',
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.translate),
               activeIcon: Icon(Icons.translate_outlined),
-              label: '3번째',
+              label: '즐겨찾기',
             ),
           ],
         ),
