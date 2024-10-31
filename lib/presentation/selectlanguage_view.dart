@@ -3,6 +3,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:translation/riverpod/language_provider.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
+import 'RootPage.dart';
+
 class SelectLanguageView extends ConsumerWidget {
   const SelectLanguageView({Key? key}) : super(key: key);
 
@@ -66,6 +68,12 @@ class SelectLanguageView extends ConsumerWidget {
                   Language.indonesian,
               color: Colors.yellow[300]!,
             ),
+            ElevatedButton(onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => RootPage()),
+              );
+            }, child: Text("다음")),
           ],
         ),
       ),
