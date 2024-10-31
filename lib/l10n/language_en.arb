@@ -1,4 +1,5 @@
 {
   "hello": "Hello",
-  "select_language": "Select Language"
+  "select_language": "Select Language",
+  "restaurant": "Restaurant"
 }
