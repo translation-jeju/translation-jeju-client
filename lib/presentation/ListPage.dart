@@ -6,14 +6,14 @@ import 'SettingPage.dart';
 class ListPage extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-
     return SafeArea(
       child: Scaffold(
         backgroundColor: Colors.white,
         appBar: null,
         body: Column(
           children: [
-            Text(AppLocalizations.of(context)?.restaurant ?? 'Restaurant')          ],
+            Text(AppLocalizations.of(context)?.restaurant ?? 'Restaurant')
+          ],
         ),
       ),
     );
