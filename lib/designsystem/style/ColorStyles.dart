@@ -10,5 +10,5 @@ class AppColors {
   static const Color subText = Color(0xFFBFBFBF);
   static const Color darkText = Color(0xFF595959);
   static const Color darkText2 = Color(0xFF737373);
-  static const Color background = Color(0xFFF5F5F5);
+  static const Color black = Color(0xFF000000);
 }

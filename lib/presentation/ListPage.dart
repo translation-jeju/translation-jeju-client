@@ -19,8 +19,7 @@ class ListPage extends ConsumerWidget {
                 collapsedBackgroundColor: AppColors.subColor,
                 title: const Text('기본 표현'),
                 children: [
-                  CustomListTile(word: '펜안 하우꽈? 제주도엔 오난 어떵 하우꽈?', bookmark: () {}, sound: () {}),
-                  CustomListTile(word: '메뉴', bookmark: () {}, sound: () {}),
+                  CustomListTile(appWord: 'sdf', jejuWord: '펜안 하우꽈? 제주도엔 오난 어떵 하우꽈?', bookmark: () {}, sound: () {}),
 
                 ],
               ),
@@ -38,8 +37,6 @@ class ListPage extends ConsumerWidget {
                 collapsedBackgroundColor: AppColors.subColor,
                 title: const Text('불편사항'),
                 children: [
-                  CustomListTile(word: '메뉴', bookmark: () {}, sound: () {}),
-                  CustomListTile(word: '메뉴', bookmark: () {}, sound: () {}),
 
                 ],
               ),
@@ -48,8 +45,6 @@ class ListPage extends ConsumerWidget {
                 collapsedBackgroundColor: AppColors.subColor,
                 title: const Text('쇼핑'),
                 children: [
-                  CustomListTile(word: '메뉴', bookmark: () {}, sound: () {}),
-                  CustomListTile(word: '메뉴', bookmark: () {}, sound: () {}),
 
                 ],
               ),
@@ -58,8 +53,6 @@ class ListPage extends ConsumerWidget {
                 collapsedBackgroundColor: AppColors.subColor,
                 title: const Text('교통'),
                 children: [
-                  CustomListTile(word: '메뉴', bookmark: () {}, sound: () {}),
-                  CustomListTile(word: '메뉴', bookmark: () {}, sound: () {}),
 
                 ],
               ),
