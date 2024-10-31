@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:translation/presentation/ListPage.dart';
 import 'package:translation/presentation/SelectLanguagePage.dart';
 import 'package:translation/presentation/TranslationPage.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import 'MyWordPage.dart';
 
@@ -57,17 +58,18 @@ class RootPage extends ConsumerWidget {
             BottomNavigationBarItem(
               icon: Icon(Icons.home),
               activeIcon: Icon(Icons.home_filled),
-              label: '번역',
+              label: AppLocalizations.of(context)?.translation ?? 'Translation',
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.wordpress),
               activeIcon: Icon(Icons.wordpress_outlined),
-              label: '상황별 리스트',
+              label:
+                  AppLocalizations.of(context)?.conversation ?? 'Conversation',
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.translate),
               activeIcon: Icon(Icons.translate_outlined),
-              label: '즐겨찾기',
+              label: AppLocalizations.of(context)?.vocabulary ?? 'Vocabulary',
             ),
           ],
         ),

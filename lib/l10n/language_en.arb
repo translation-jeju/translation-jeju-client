@@ -1,5 +1,16 @@
 {
   "hello": "Hello",
   "select_language": "Select Language",
+  "all_language": "All languages",
+  "korean": "Korean",
+  "indonesian": "Indonesian",
+  "nepali": "Nepali",
+  "jeju_language": "Jeju language",
+  "translation": "Translation",
+  "conversation": "Conversation",
+  "vocabulary": "Vocabulary",
+
+  "press_the_button_and_speak": "Press the button and speak...",
+
   "restaurant": "Restaurant"
 }

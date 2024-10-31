@@ -4,7 +4,7 @@ import 'package:translation/data/repository/TranslationRepository.dart';
 import 'package:translation/designsystem/style/ColorStyles.dart';
 import 'package:translation/riverpod/language_provider.dart';
 import 'package:translation/riverpod/speech_provider.dart';
-
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import '../designsystem/style/FontStyles.dart';
 
 class TranslationPage extends ConsumerStatefulWidget {
@@ -19,7 +19,7 @@ class _TranslationPageState extends ConsumerState<TranslationPage> {
   void initState() {
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      ref.read(speechProvider).initialize();
+      ref.read(speechProvider).initialize(context); // context를 전달합니다.
     });
   }
 
@@ -27,7 +27,7 @@ class _TranslationPageState extends ConsumerState<TranslationPage> {
   Widget build(BuildContext context) {
     final speechNotifier = ref.watch(speechProvider);
     final selectedLanguage = ref.watch(languageProvider);
-    final translationText = '';
+    final languageName = selectedLanguage?.name ?? 'Unknown'; // 사용자가 선택한 언어이름
 
     return SafeArea(
       child: Scaffold(
@@ -54,12 +54,8 @@ class _TranslationPageState extends ConsumerState<TranslationPage> {
                       speechNotifier.text,
                       style: FontStyles.largeTitle,
                     ),
-                    const Padding(
-                      padding: EdgeInsets.only(top: 10, bottom: 38.0),
-                      child: Text(
-                        '한국어표기',
-                        style: FontStyles.mediumBody,
-                      ),
+                    const SizedBox(
+                      height: 38,
                     ),
                     // 음성 인식 시작/정지 버튼
                     Row(
@@ -79,11 +75,13 @@ class _TranslationPageState extends ConsumerState<TranslationPage> {
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
                                     children: [
-                                      const Padding(
+                                      Padding(
                                         padding: EdgeInsets.only(
                                             right: 25.0, left: 25, top: 25),
                                         child: Text(
-                                          "모든 언어",
+                                          AppLocalizations.of(context)
+                                                  ?.all_language ??
+                                              'All language',
                                           style: FontStyles.smallTitle,
                                         ),
                                       ),
@@ -93,7 +91,7 @@ class _TranslationPageState extends ConsumerState<TranslationPage> {
                                       ),
                                       InkWell(
                                         onTap: () {},
-                                        child: const SizedBox(
+                                        child: SizedBox(
                                           width: double.infinity,
                                           child: Padding(
                                             padding: EdgeInsets.symmetric(
@@ -103,7 +101,9 @@ class _TranslationPageState extends ConsumerState<TranslationPage> {
                                                   CrossAxisAlignment.start,
                                               children: [
                                                 Text(
-                                                  "인도네시아어",
+                                                  AppLocalizations.of(context)
+                                                          ?.indonesian ??
+                                                      'Indonesian',
                                                   style: FontStyles.smallBody,
                                                 ),
                                                 Divider(
@@ -120,10 +120,11 @@ class _TranslationPageState extends ConsumerState<TranslationPage> {
                                 },
                               );
                             },
-                            child: const Row(
+                            child: Row(
                               children: [
                                 Text(
-                                  "인도네시아어",
+                                  AppLocalizations.of(context)?.indonesian ??
+                                      'Indonesian',
                                   style: FontStyles.mediumBody,
                                 ),
                                 Icon(Icons.keyboard_arrow_down)
@@ -136,7 +137,7 @@ class _TranslationPageState extends ConsumerState<TranslationPage> {
                             if (speechNotifier.isListening) {
                               speechNotifier.stopListening();
                             } else {
-                              speechNotifier.startListening();
+                              speechNotifier.startListening(ref);
                             }
                           },
                           child: Icon(speechNotifier.isListening
@@ -165,86 +166,29 @@ class _TranslationPageState extends ConsumerState<TranslationPage> {
                       style: FontStyles.largeTitle.copyWith(
                           color: Colors.white, fontFamily: 'PretendardMedium'),
                     ),
-                    Padding(
-                      padding: EdgeInsets.only(top: 10, bottom: 38.0),
-                      child: Text(
-                        '어서오세요',
-                        style: FontStyles.mediumBody.copyWith(
-                            color: Colors.white,
-                            fontFamily: 'PretendardMedium'),
-                      ),
+                    const SizedBox(
+                      height: 40,
                     ),
                     // 음성 인식 시작/정지 버튼
                     Row(
                       children: [
                         InkWell(
-                            onTap: () async {
-                              await postTranslation(speechNotifier.text, selectedLanguage.toString());
-                            },
-                            child: const Icon(
-                              Icons.speaker,
-                              color: Colors.white,
-                            ),),
+                          onTap: () async {
+                            await postTranslation(speechNotifier.text,
+                                selectedLanguage.toString());
+                          },
+                          child: const Icon(
+                            Icons.speaker,
+                            color: Colors.white,
+                          ),
+                        ),
                         const Spacer(),
                         Padding(
                           padding: const EdgeInsets.only(right: 10.0),
-                          child: GestureDetector(
-                            onTap: () {
-                              showModalBottomSheet(
-                                context: context,
-                                backgroundColor: Colors.white,
-                                builder: (BuildContext context) {
-                                  return Column(
-                                    mainAxisSize: MainAxisSize.min,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      const Padding(
-                                        padding: EdgeInsets.only(
-                                            right: 25.0, left: 25, top: 25),
-                                        child: Text(
-                                          "모든 언어",
-                                          style: FontStyles.smallTitle,
-                                        ),
-                                      ),
-                                      const Divider(
-                                        thickness: 1,
-                                        color: AppColors.line1,
-                                      ),
-                                      InkWell(
-                                        onTap: () {},
-                                        child: const SizedBox(
-                                          width: double.infinity,
-                                          child: Padding(
-                                            padding: EdgeInsets.symmetric(
-                                                vertical: 12, horizontal: 25),
-                                            child: Column(
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.start,
-                                              children: [
-                                                Text(
-                                                  "인도네시아어",
-                                                  style: FontStyles.smallBody,
-                                                ),
-                                                Divider(
-                                                  thickness: 1,
-                                                  color: AppColors.line1,
-                                                )
-                                              ],
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                    ],
-                                  );
-                                },
-                              );
-                            },
-                            child: Text(
-                              "제주어/표준어",
-                              style: FontStyles.mediumBody
-                                  .copyWith(color: Colors.white),
-                            ),
+                          child: Text(
+                            AppLocalizations.of(context)?.jeju_language ??
+                                'Jeju language',
+                            style: FontStyles.mediumBody,
                           ),
                         ),
                         InkWell(
@@ -252,7 +196,7 @@ class _TranslationPageState extends ConsumerState<TranslationPage> {
                             if (speechNotifier.isListening) {
                               speechNotifier.stopListening();
                             } else {
-                              speechNotifier.startListening();
+                              speechNotifier.startListening(ref);
                             }
                           },
                           child: Icon(

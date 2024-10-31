@@ -1,5 +1,16 @@
 {
   "hello": "Halo",
   "select_language": "Pilih Bahasa",
+  "all_language": "Semua bahasa",
+  "korean": "Korea",
+  "indonesian": "Indonesia",
+  "nepali": "Nepal",
+  "jeju_language": "bahasa Jeju",
+  "translation": "terjemahan",
+  "conversation": "percakapan",
+  "vocabulary": "buku kosakata",
+
+  "press_the_button_and_speak": "Cukup tekan tombol dan bicara...",
+
   "restaurant": "restoran"
 }
