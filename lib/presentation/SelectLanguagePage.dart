@@ -20,7 +20,7 @@ class SelectLanguagePage extends ConsumerWidget {
       appBar: AppBar(
         centerTitle: true,
         title: Text(
-            AppLocalizations.of(context)?.select_language ?? 'Select Language',
+          AppLocalizations.of(context)?.select_language ?? 'Select Language',
           style: FontStyles.largeTitle,
         ),
         backgroundColor: Colors.white,
@@ -89,8 +89,8 @@ class SelectLanguagePage extends ConsumerWidget {
                 shadowColor: Colors.teal.withOpacity(0.5),
                 elevation: selectedLanguage == Language.english ? 10 : 2,
               ),
-              onPressed: () => ref.read(languageProvider.notifier).state =
-                  Language.english,
+              onPressed: () =>
+                  ref.read(languageProvider.notifier).state = Language.english,
               child: const Text(
                 'English',
                 style: TextStyle(
@@ -100,16 +100,16 @@ class SelectLanguagePage extends ConsumerWidget {
               ),
             ),
           ),
-          // Nepali Button
+          // Chinese Button
           Padding(
             padding:
                 const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(
-                backgroundColor: selectedLanguage == Language.nepali
+                backgroundColor: selectedLanguage == Language.chinese
                     ? Colors.black
                     : Colors.grey[200],
-                foregroundColor: selectedLanguage == Language.nepali
+                foregroundColor: selectedLanguage == Language.chinese
                     ? Colors.white
                     : Colors.black87,
                 minimumSize: const Size(200, 50),
@@ -117,12 +117,12 @@ class SelectLanguagePage extends ConsumerWidget {
                   borderRadius: BorderRadius.circular(15),
                 ),
                 shadowColor: Colors.teal.withOpacity(0.5),
-                elevation: selectedLanguage == Language.nepali ? 10 : 2,
+                elevation: selectedLanguage == Language.chinese ? 10 : 2,
               ),
               onPressed: () =>
-                  ref.read(languageProvider.notifier).state = Language.nepali,
+                  ref.read(languageProvider.notifier).state = Language.chinese,
               child: const Text(
-                'Nepali',
+                'Chinese',
                 style: TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
