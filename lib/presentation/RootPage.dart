@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:translation/presentation/ListPage.dart';
 import 'package:translation/presentation/SelectLanguagePage.dart';
-import 'package:translation/presentation/SettingPage.dart';
 import 'package:translation/presentation/TranslationPage.dart';
 
 import 'WordPage.dart';
@@ -27,7 +26,8 @@ class RootPage extends ConsumerWidget {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const SelectLanguagePage()),
+                  MaterialPageRoute(
+                      builder: (context) => const SelectLanguagePage()),
                 );
               },
               icon: Icon(Icons.settings))
