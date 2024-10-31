@@ -11,8 +11,8 @@ class CustomListTile extends StatelessWidget {
     super.key,
     required this.appWord,
     required this.jejuWord,
-    required this.bookmark,
     required this.sound,
+    required this.bookmark,
   });
 
   @override

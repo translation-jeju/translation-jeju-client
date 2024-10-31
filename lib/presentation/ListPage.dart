@@ -25,14 +25,13 @@ class ListPage extends ConsumerWidget {
                 ),
                 children: [
                   CustomListTile(
-                      appWord: 'fdfdf',
-                      jejuWord: '펜안 하우꽈? 제주도엔 오난 어떵 하우꽈?',
-                      bookmark: () {
-                        showToast('sdfs');
-                      },
-                      sound: () {
-
-                      }),
+                    appWord: 'fdfdf',
+                    jejuWord: '펜안 하우꽈? 제주도엔 오난 어떵 하우꽈?',
+                    sound: () {},
+                    bookmark: () {
+                      showToast('sdfs');
+                    },
+                  ),
                 ],
               ),
               ExpansionTile(
