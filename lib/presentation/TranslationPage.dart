@@ -29,116 +29,22 @@ class _TranslationPageState extends ConsumerState<TranslationPage> {
         body: Padding(
           padding: const EdgeInsets.all(16.0),
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              // 인식된 텍스트를 표시하는 텍스트 상자
               Container(
                 padding: const EdgeInsets.all(12.0),
                 decoration: BoxDecoration(
                   border: Border.all(color: Colors.grey),
                   borderRadius: BorderRadius.circular(8.0),
                 ),
-                child: TextField(
-                  maxLines: 4,
-                  maxLength: 3000,
-                  decoration: const InputDecoration(
-                    hintText: '번역할 내용을 입력하세요',
-                    border: InputBorder.none,
-                    counterText: '',
-                  ),
-                  onChanged: (text) {
-                    // Handle text input
-                  },
+                child: Text(
+                  speechNotifier.text,
+                  style: const TextStyle(fontSize: 20),
                 ),
-              ),
-
-              const SizedBox(height: 10),
-
-              // Input Text Area for Translation
-              Container(
-                padding: const EdgeInsets.all(12.0),
-                decoration: BoxDecoration(
-                  border: Border.all(color: Colors.grey),
-                  borderRadius: BorderRadius.circular(8.0),
-                ),
-                child: TextField(
-                  maxLines: 4,
-                  maxLength: 3000,
-                  decoration: const InputDecoration(
-                    hintText: '번역할 내용을 입력하세요',
-                    border: InputBorder.none,
-                    counterText: '',
-                  ),
-                  onChanged: (text) {
-                    // Handle text input
-                  },
-                ),
-              ),
-              const SizedBox(height: 10),
-
-              // Translate Button
-              SizedBox(
-                width: double.infinity,
-                child: ElevatedButton(
-                  onPressed: () {
-                    // Handle translation
-                  },
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.green,
-                  ),
-                  child: const Text("번역하기"),
-                ),
-              ),
-              const SizedBox(height: 10),
-
-              // Translated Text Display
-              Container(
-                padding: const EdgeInsets.all(12.0),
-                decoration: BoxDecoration(
-                  border: Border.all(color: Colors.grey),
-                  borderRadius: BorderRadius.circular(8.0),
-                ),
-                child: const Text(
-                  "번역된 텍스트가 여기에 표시됩니다.",
-                  style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ),
-              const SizedBox(height: 10),
-
-              // Additional Controls (Speaker, Copy, Favorite, Share)
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  IconButton(
-                    icon: const Icon(Icons.volume_up),
-                    onPressed: () {
-                      // Handle text-to-speech
-                    },
-                  ),
-                  IconButton(
-                    icon: const Icon(Icons.copy),
-                    onPressed: () {
-                      // Handle copy text
-                    },
-                  ),
-                  IconButton(
-                    icon: const Icon(Icons.star_border),
-                    onPressed: () {
-                      // Handle favorite
-                    },
-                  ),
-                  IconButton(
-                    icon: const Icon(Icons.share),
-                    onPressed: () {
-                      // Handle share
-                    },
-                  ),
-                ],
               ),
               const SizedBox(height: 20),
-
-              // Speech Recognition Button
+              // 음성 인식 시작/정지 버튼
               FloatingActionButton(
                 onPressed: () {
                   if (speechNotifier.isListening) {
