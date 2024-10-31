@@ -17,9 +17,12 @@ class BookmarkCard extends StatelessWidget {
       child: SizedBox(
         width: double.infinity,
         child: Center(
-          child: Text(
-            text,
-            style: FontStyles.largeTitle.copyWith(color: Colors.white),
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 10.0),
+            child: Text(
+              text,
+              style: FontStyles.largeTitle.copyWith(color: Colors.white),
+            ),
           ),
         ),
       ),
