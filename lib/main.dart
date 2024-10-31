@@ -23,11 +23,13 @@ class TranslationApp extends ConsumerWidget {
     return MaterialApp(
       localizationsDelegates: const [
         AppLocalizations.delegate,
+        // 다언어 설정
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate,
       ],
       supportedLocales: const [
+        // 다언어 설정
         Locale('ko', ''), //한국어
         Locale('en', ''), //영어
         Locale('ne', ''), //네팔어
