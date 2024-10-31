@@ -1,5 +1,16 @@
 {
   "hello": "안녕하세요",
-  "select_language": "언어 선택",
+  "select_language": "언어선택",
+  "all_language": "모든 언어",
+  "korean": "한국어",
+  "indonesian": "인도네시아어",
+  "nepali": "네팔어",
+  "jeju_language": "제주어",
+  "translation": "번역",
+  "conversation": "회화",
+  "vocabulary": "단어장",
+
+  "press_the_button_and_speak": "버튼을 누르고 말하세요...",
+
   "restaurant": "식당"
 }

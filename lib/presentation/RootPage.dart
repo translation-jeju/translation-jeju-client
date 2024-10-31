@@ -4,6 +4,7 @@ import 'package:translation/designsystem/style/ColorStyles.dart';
 import 'package:translation/presentation/ListPage.dart';
 import 'package:translation/presentation/SelectLanguagePage.dart';
 import 'package:translation/presentation/TranslationPage.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_svg/svg.dart';
 
 import '../designsystem/style/FontStyles.dart';
@@ -64,20 +65,21 @@ class RootPage extends ConsumerWidget {
           currentIndex: ref.watch(indexProvider),
           items: [
             BottomNavigationBarItem(
-              icon: SvgPicture.asset('assets/images/ic_translate_unfill.svg'),
+               icon: SvgPicture.asset('assets/images/ic_translate_unfill.svg'),
               activeIcon:
                   SvgPicture.asset('assets/images/ic_translate_fill.svg'),
-              label: '번역',
+              label: AppLocalizations.of(context)?.translation ?? 'Translation',
             ),
             BottomNavigationBarItem(
-              icon: SvgPicture.asset('assets/images/ic_list_unfill.svg'),
+             icon: SvgPicture.asset('assets/images/ic_list_unfill.svg'),
               activeIcon: SvgPicture.asset('assets/images/ic_list_fill.svg'),
-              label: '회화',
+              label:
+                  AppLocalizations.of(context)?.conversation ?? 'Conversation',
             ),
             BottomNavigationBarItem(
               icon: SvgPicture.asset('assets/images/ic_my_word_unfill.svg'),
               activeIcon: SvgPicture.asset('assets/images/ic_my_word_fill.svg'),
-              label: '단어장',
+              label: AppLocalizations.of(context)?.vocabulary ?? 'Vocabulary',
             ),
           ],
         ),
