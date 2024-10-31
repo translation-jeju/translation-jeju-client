@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:translation/designsystem/style/FontStyles.dart';
 
 class CustomListTile extends StatelessWidget {
   final String appWord;
@@ -31,6 +32,7 @@ class CustomListTile extends StatelessWidget {
                 overflow: TextOverflow.ellipsis,
                 maxLines: 1,
                 softWrap: false,
+                style: FontStyles.smallBody,
               ),
             ),
             Row(
@@ -41,15 +43,16 @@ class CustomListTile extends StatelessWidget {
                     overflow: TextOverflow.ellipsis,
                     maxLines: 1,
                     softWrap: false,
+                    style: FontStyles.smallBody,
                   ),
                 ),
                 const Spacer(),
                 GestureDetector(
-                    onTap: bookmark, child: Icon(Icons.delete)),
+                    onTap: bookmark, child: Icon(Icons.speaker)),
                 Padding(
                   padding: const EdgeInsets.only(left: 10.0),
                   child: GestureDetector(
-                      onTap: sound, child: Icon(Icons.delete)),
+                      onTap: sound, child: Icon(Icons.bookmark)),
                 ),
               ],
             ),
