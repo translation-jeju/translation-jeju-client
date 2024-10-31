@@ -48,11 +48,11 @@ class CustomListTile extends StatelessWidget {
                 ),
                 const Spacer(),
                 GestureDetector(
-                    onTap: bookmark, child: Icon(Icons.speaker)),
+                    onTap: sound, child: Icon(Icons.speaker)),
                 Padding(
                   padding: const EdgeInsets.only(left: 10.0),
                   child: GestureDetector(
-                      onTap: sound, child: Icon(Icons.bookmark)),
+                      onTap: bookmark, child: Icon(Icons.bookmark)),
                 ),
               ],
             ),

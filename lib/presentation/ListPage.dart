@@ -3,6 +3,7 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:translation/designsystem/component/CustomListTile.dart';
 import 'package:translation/designsystem/style/ColorStyles.dart';
+import 'package:translation/utils/ShowMessage.dart';
 
 import '../designsystem/style/FontStyles.dart';
 
@@ -24,10 +25,14 @@ class ListPage extends ConsumerWidget {
                 ),
                 children: [
                   CustomListTile(
-                      appWord: 'sdf',
+                      appWord: 'fdfdf',
                       jejuWord: '펜안 하우꽈? 제주도엔 오난 어떵 하우꽈?',
-                      bookmark: () {},
-                      sound: () {}),
+                      bookmark: () {
+                        showToast('sdfs');
+                      },
+                      sound: () {
+
+                      }),
                 ],
               ),
               ExpansionTile(
