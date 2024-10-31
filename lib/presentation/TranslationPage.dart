@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:translation/data/repository/TranslationRepository.dart';
 import 'package:translation/designsystem/style/ColorStyles.dart';
 import 'package:translation/riverpod/language_provider.dart';
 import 'package:translation/riverpod/speech_provider.dart';
@@ -25,7 +26,8 @@ class _TranslationPageState extends ConsumerState<TranslationPage> {
   @override
   Widget build(BuildContext context) {
     final speechNotifier = ref.watch(speechProvider);
-    final languageNotifier = ref.watch(languageProvider);
+    final selectedLanguage = ref.watch(languageProvider);
+    final translationText = '';
 
     return SafeArea(
       child: Scaffold(
@@ -176,11 +178,13 @@ class _TranslationPageState extends ConsumerState<TranslationPage> {
                     Row(
                       children: [
                         InkWell(
-                            onTap: () {},
-                            child: Icon(
+                            onTap: () async {
+                              await postTranslation(speechNotifier.text, selectedLanguage.toString());
+                            },
+                            child: const Icon(
                               Icons.speaker,
                               color: Colors.white,
-                            )),
+                            ),),
                         const Spacer(),
                         Padding(
                           padding: const EdgeInsets.only(right: 10.0),
