@@ -10,7 +10,7 @@ class MyWordPage extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     // FlipCard에 들어갈 데이터 리스트
     final List<Map<String, String>> cards = [
-      {'front': 'Front 1', 'back': 'Back 1'},
+      {'front': '제주방언', 'back': 'app언어'},
       {'front': 'Front 2', 'back': 'Back 2'},
       {'front': 'Front 3', 'back': 'Back 3'},
       // 필요한 만큼 더 추가
@@ -24,9 +24,6 @@ class MyWordPage extends ConsumerWidget {
           padding: const EdgeInsets.all(20.0),
           child: Column(
             children: [
-              const SizedBox(
-                height: 150,
-              ),
               Expanded(
                 child: PageView.builder(
                   itemCount: cards.length,
@@ -35,10 +32,32 @@ class MyWordPage extends ConsumerWidget {
                       fill: Fill.fillBack,
                       direction: FlipDirection.HORIZONTAL,
                       side: CardSide.FRONT,
-                      front: FrontCard(text: cards[index]['front']!),
-                      back: BackCard(text: cards[index]['back']!),
+                      front: BookmarkCard(text: cards[index]['front']!),
+                      back: BookmarkCard(text: cards[index]['back']!),
                     );
                   },
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(top: 16.0),
+                child: Row(
+                  children: [
+                    InkWell(
+                      onTap: () {},
+                      child: const Icon(
+                        Icons.speaker,
+                      ),
+                    ),
+                    const SizedBox(
+                      width: 12,
+                    ),
+                    InkWell(
+                      onTap: () {},
+                      child: const Icon(
+                        Icons.bookmark,
+                      ),
+                    ),
+                  ],
                 ),
               ),
             ],
