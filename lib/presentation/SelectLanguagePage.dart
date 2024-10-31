@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:translation/designsystem/component/CustomButton.dart';
+import 'package:translation/designsystem/style/ColorStyles.dart';
 import 'package:translation/riverpod/language_provider.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import 'RootPage.dart';
 
-class SelectLanguageView extends ConsumerWidget {
-  const SelectLanguageView({Key? key}) : super(key: key);
+class SelectLanguagePage extends ConsumerWidget {
+  const SelectLanguagePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -156,14 +158,16 @@ class SelectLanguageView extends ConsumerWidget {
               ),
             ),
 
-            ElevatedButton(
+            CustomButton(
+                label: '다음',
+                color: AppColors.mainColor,
+                textColor: Colors.white,
                 onPressed: () {
                   Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => RootPage()),
                   );
-                },
-                child: const Text("다음")),
+                })
           ],
         ),
       ),
