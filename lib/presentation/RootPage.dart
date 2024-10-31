@@ -38,7 +38,7 @@ class RootPage extends ConsumerWidget {
         children: [
           TranslationPage(),
           ListPage(),
-          WordPage(),
+          MyWordPage(),
         ],
       ),
       bottomNavigationBar: Theme(

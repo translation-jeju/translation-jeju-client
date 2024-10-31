@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:translation/designsystem/component/CustomCard.dart';
 
-class WordPage extends ConsumerWidget {
-  const WordPage({super.key});
+class MyWordPage extends ConsumerWidget {
+  const MyWordPage({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -36,7 +36,7 @@ class WordPage extends ConsumerWidget {
                       direction: FlipDirection.HORIZONTAL,
                       side: CardSide.FRONT,
                       front: FrontCard(text: cards[index]['front']!),
-                      back: FrontCard(text: cards[index]['back']!),
+                      back: BackCard(text: cards[index]['back']!),
                     );
                   },
                 ),
