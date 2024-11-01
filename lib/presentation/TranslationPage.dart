@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:translation/data/repository/TranslationRepository.dart';
 import 'package:translation/designsystem/style/ColorStyles.dart';
 import 'package:translation/riverpod/language_provider.dart';
 import 'package:translation/riverpod/speech_provider.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
+import '../data/repository/ListRepository.dart';
 import '../designsystem/style/FontStyles.dart';
 
 class TranslationPage extends ConsumerStatefulWidget {
@@ -82,7 +83,23 @@ class _TranslationPageState extends ConsumerState<TranslationPage> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(speechNotifier.text, style: FontStyles.largeTitle),
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Expanded(child: Text(speechNotifier.text, style: FontStyles.largeTitle)),
+              InkWell(
+                onTap: () async {
+                  await postBookmark(
+                      speechNotifier.text,
+                      speechNotifier.translatedText, ref);
+                },
+                child: const Icon(
+                  Icons.bookmark_border_outlined,
+                  color: AppColors.black,
+                ),
+              ),
+            ],
+          ),
           const SizedBox(height: 38),
           Row(
             children: [

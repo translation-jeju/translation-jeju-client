@@ -5,6 +5,7 @@ import 'package:translation/data/repository/ListRepository.dart';
 import 'package:translation/designsystem/component/CustomListTile.dart';
 import 'package:translation/designsystem/style/ColorStyles.dart';
 import 'package:flutter_tts/flutter_tts.dart';
+import 'package:translation/utils/ShowMessage.dart';
 
 import '../designsystem/style/FontStyles.dart';
 
@@ -76,6 +77,7 @@ class _ListPageState extends ConsumerState<ListPage> {
                           await postBookmark(
                               AppLocalizations.of(context)!.welcome.toString(),
                               '혼저 옵서예', ref);
+                          showToast('저장되었습니다');
                         },
                       ),
                       CustomListTile(
@@ -87,6 +89,7 @@ class _ListPageState extends ConsumerState<ListPage> {
                           await postBookmark(
                               AppLocalizations.of(context)!.great_job.toString(),
                               '폭삭 속암수다', ref);
+                          showToast('저장되었습니다');
                         },
                       ),
                       CustomListTile(
@@ -98,6 +101,7 @@ class _ListPageState extends ConsumerState<ListPage> {
                           await postBookmark(
                               AppLocalizations.of(context)!.enjoy_meal.toString(),
                               '도르멍 하영 가쿠다', ref);
+                          showToast('저장되었습니다');
                         },
                       ),
                       CustomListTile(
@@ -109,6 +113,7 @@ class _ListPageState extends ConsumerState<ListPage> {
                           await postBookmark(
                               AppLocalizations.of(context)!.where_from.toString(),
                               '어디서 옵데가?', ref);
+                          showToast('저장되었습니다');
                         },
                       ),
                       CustomListTile(
@@ -120,6 +125,7 @@ class _ListPageState extends ConsumerState<ListPage> {
                           await postBookmark(
                               AppLocalizations.of(context)!.goodbye.toString(),
                               '게로마씸', ref);
+                          showToast('저장되었습니다');
                         },
                       ),
                     ],
@@ -142,6 +148,7 @@ class _ListPageState extends ConsumerState<ListPage> {
                           await postBookmark(
                               AppLocalizations.of(context)!.potatoes_stacked.toString(),
                               '감저 저곡 해놨수다', ref);
+                          showToast('저장되었습니다');
                         },
                       ),
                       CustomListTile(
@@ -154,6 +161,7 @@ class _ListPageState extends ConsumerState<ListPage> {
                           await postBookmark(
                               AppLocalizations.of(context)!.let_us_pick_citrus.toString(),
                               '감결 딸라감쪄', ref);
+                          showToast('저장되었습니다');
                         },
                       ),
                       CustomListTile(
@@ -165,6 +173,7 @@ class _ListPageState extends ConsumerState<ListPage> {
                           await postBookmark(
                               AppLocalizations.of(context)!.try_gradually.toString(),
                               '호꼼 씹서 해보난 좋수다', ref);
+                          showToast('저장되었습니다');
                         },
                       ),
                       CustomListTile(
@@ -176,6 +185,7 @@ class _ListPageState extends ConsumerState<ListPage> {
                           await postBookmark(
                               AppLocalizations.of(context)!.try_again.toString(),
                               '고다시 가수다', ref);
+                          showToast('저장되었습니다');
                         },
                       ),
                       CustomListTile(
@@ -187,6 +197,7 @@ class _ListPageState extends ConsumerState<ListPage> {
                           await postBookmark(
                               AppLocalizations.of(context)!.classify_fish.toString(),
                               '생이 갈라줘', ref);
+                          showToast('저장되었습니다');
                         },
                       ),
                       CustomListTile(
@@ -198,6 +209,7 @@ class _ListPageState extends ConsumerState<ListPage> {
                           await postBookmark(
                               AppLocalizations.of(context)!.hurry_up.toString(),
                               '혼저혼저 오라게', ref);
+                          showToast('저장되었습니다');
                         },
                       ),
                     ],
@@ -219,6 +231,7 @@ class _ListPageState extends ConsumerState<ListPage> {
                           await postBookmark(
                               AppLocalizations.of(context)!.come_see.toString(),
                               '왕방갑서', ref);
+                          showToast('저장되었습니다');
                         },
                       ),
                       CustomListTile(
@@ -231,6 +244,7 @@ class _ListPageState extends ConsumerState<ListPage> {
                           await postBookmark(
                               AppLocalizations.of(context)!.hurry_up_and_come.toString(),
                               '몽케지 마랑 혼저 오라게', ref);
+                          showToast('저장되었습니다');
                         },
                       ),
                       CustomListTile(
@@ -243,6 +257,7 @@ class _ListPageState extends ConsumerState<ListPage> {
                           await postBookmark(
                               AppLocalizations.of(context)!.last_one_remaining.toString(),
                               '매기 우다', ref);
+                          showToast('저장되었습니다');
                         },
                       ),
                       CustomListTile(
@@ -255,6 +270,7 @@ class _ListPageState extends ConsumerState<ListPage> {
                           await postBookmark(
                               AppLocalizations.of(context)!.what_are_you_looking_for.toString(),
                               '무신거 촞암수과', ref);
+                          showToast('저장되었습니다');
                         },
                       ),
                     ],
