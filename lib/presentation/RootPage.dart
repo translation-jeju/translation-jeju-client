@@ -46,8 +46,8 @@ class RootPage extends ConsumerWidget {
       body: IndexedStack(
         index: ref.watch(indexProvider),
         children: [
-          TranslationPage(),
           ListPage(),
+          TranslationPage(),
           MyWordPage(),
         ],
       ),
@@ -59,7 +59,8 @@ class RootPage extends ConsumerWidget {
         child: BottomNavigationBar(
           type: BottomNavigationBarType.fixed,
           selectedItemColor: AppColors.mainColor,
-          unselectedLabelStyle: FontStyles.smallBody.copyWith(color: AppColors.subText),
+          unselectedLabelStyle:
+              FontStyles.smallBody.copyWith(color: AppColors.subText),
           backgroundColor: Colors.white,
           onTap: (index) {
             ref.read(indexProvider.notifier).state = index;
@@ -67,16 +68,16 @@ class RootPage extends ConsumerWidget {
           currentIndex: ref.watch(indexProvider),
           items: [
             BottomNavigationBarItem(
-               icon: SvgPicture.asset('assets/images/ic_translate_unfill.svg'),
-              activeIcon:
-                  SvgPicture.asset('assets/images/ic_translate_fill.svg'),
-              label: AppLocalizations.of(context)?.translation ?? 'Translation',
-            ),
-            BottomNavigationBarItem(
-             icon: SvgPicture.asset('assets/images/ic_list_unfill.svg'),
+              icon: SvgPicture.asset('assets/images/ic_list_unfill.svg'),
               activeIcon: SvgPicture.asset('assets/images/ic_list_fill.svg'),
               label:
                   AppLocalizations.of(context)?.conversation ?? 'Conversation',
+            ),
+            BottomNavigationBarItem(
+              icon: SvgPicture.asset('assets/images/ic_translate_unfill.svg'),
+              activeIcon:
+                  SvgPicture.asset('assets/images/ic_translate_fill.svg'),
+              label: AppLocalizations.of(context)?.translation ?? 'Translation',
             ),
             BottomNavigationBarItem(
               icon: SvgPicture.asset('assets/images/ic_my_word_unfill.svg'),

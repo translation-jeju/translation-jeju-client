@@ -5,8 +5,9 @@ import '../style/FontStyles.dart';
 
 class BookmarkCard extends StatelessWidget {
   final String text;
+  final String order;
 
-  const BookmarkCard({super.key, required this.text});
+  const BookmarkCard({super.key, required this.text, required this.order});
 
   @override
   Widget build(BuildContext context) {
@@ -16,14 +17,24 @@ class BookmarkCard extends StatelessWidget {
       color: AppColors.mainColor,
       child: SizedBox(
         width: double.infinity,
-        child: Center(
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 10.0),
-            child: Text(
-              text,
-              style: FontStyles.largeTitle.copyWith(color: Colors.white),
+        child: Column(
+          children: [
+            Spacer(),
+            Center(
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                child: Text(
+                  text,
+                  style: FontStyles.largeTitle.copyWith(color: Colors.white),
+                ),
+              ),
             ),
-          ),
+            Spacer(),
+            Padding(
+              padding: const EdgeInsets.only(bottom: 10.0),
+              child: Text(order, style: FontStyles.smallTitle.copyWith(color: Colors.white),),
+            )
+          ],
         ),
       ),
     );
