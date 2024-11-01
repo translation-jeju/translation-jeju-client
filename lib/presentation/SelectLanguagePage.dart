@@ -19,8 +19,8 @@ class SelectLanguagePage extends ConsumerWidget {
       backgroundColor: Colors.white,
       appBar: AppBar(
         centerTitle: true,
-        title: Text(
-          AppLocalizations.of(context)?.select_language ?? 'Select Language',
+        title: const Text(
+          '언어선택',
           style: FontStyles.largeTitle,
         ),
         backgroundColor: Colors.white,
@@ -30,9 +30,9 @@ class SelectLanguagePage extends ConsumerWidget {
         children: <Widget>[
           const Spacer(),
           const Text(
-            'Please choose your language.',
+            '사용하실 언어를 골라주세요.',
             style: TextStyle(
-              fontSize: 18,
+              fontSize: 25,
               color: AppColors.black,
               fontWeight: FontWeight.bold,
             ),
@@ -62,7 +62,7 @@ class SelectLanguagePage extends ConsumerWidget {
               onPressed: () =>
                   ref.read(languageProvider.notifier).state = Language.korean,
               child: const Text(
-                'Korean',
+                '한국어',
                 style: TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
@@ -122,7 +122,7 @@ class SelectLanguagePage extends ConsumerWidget {
               onPressed: () =>
                   ref.read(languageProvider.notifier).state = Language.chinese,
               child: const Text(
-                'Chinese',
+                '普通话',
                 style: TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
@@ -152,7 +152,7 @@ class SelectLanguagePage extends ConsumerWidget {
               onPressed: () => ref.read(languageProvider.notifier).state =
                   Language.indonesian,
               child: const Text(
-                'Indonesian',
+                'Indonesia',
                 style: TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,

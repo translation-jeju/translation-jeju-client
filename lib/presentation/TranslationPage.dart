@@ -170,19 +170,6 @@ class _TranslationPageState extends ConsumerState<TranslationPage> {
                   style: FontStyles.mediumBody.copyWith(color: Colors.white),
                 ),
               ),
-              InkWell(
-                onTap: () {
-                  if (speechNotifier.isListening) {
-                    speechNotifier.stopListening();
-                  } else {
-                    speechNotifier.startListening(ref);
-                  }
-                },
-                child: Icon(
-                  speechNotifier.isListening ? Icons.mic_off : Icons.mic,
-                  color: Colors.white,
-                ),
-              ),
             ],
           ),
         ],
