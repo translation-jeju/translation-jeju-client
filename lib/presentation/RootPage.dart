@@ -71,7 +71,7 @@ class RootPage extends ConsumerWidget {
               icon: SvgPicture.asset('assets/images/ic_list_unfill.svg'),
               activeIcon: SvgPicture.asset('assets/images/ic_list_fill.svg'),
               label:
-                  AppLocalizations.of(context)?.conversation ?? 'Conversation',
+                  AppLocalizations.of(context)?.daily ?? 'Daily',
             ),
             BottomNavigationBarItem(
               icon: SvgPicture.asset('assets/images/ic_translate_unfill.svg'),

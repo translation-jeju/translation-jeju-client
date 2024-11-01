@@ -35,6 +35,7 @@
   "daily_life_work": "Daily Life/Work",
   "shopping": "Shopping",
   "done": "Done",
+  "daily": "Daily",
 
   "why": "Why",
   "many": "Many",
@@ -42,5 +43,23 @@
   "dont_know": "Don't know",
   "puppy": "Puppy",
   "black_stone": "Black stone",
-  "first": "First"
+  "first": "First",
+
+  "walking_around": "Walking around",
+  "potato": "Potato",
+  "small_thing": "Small thing",
+  "please_come_in": "Please come in",
+  "fish": "Fish",
+  "urchin_gathering": "Urchin gathering",
+  "going_now": "Going now",
+  "eat_a_bit_then_go": "Eat a bit then go",
+  "hurry": "Hurry",
+  "walking_while_working": "Walking while working",
+  "cow_head": "Cow head",
+  "soy_sauce": "Soy sauce",
+
+  "daily_word": "Daily Word",
+  "agriculture": "Agriculture",
+  "fishing": "Fishing",
+  "animal_husbandry": "Animal Husbandry"
 }
