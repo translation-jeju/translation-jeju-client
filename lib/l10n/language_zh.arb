@@ -14,17 +14,17 @@
   "vocabulary": "词汇书",
 
   "press_the_button_and_speak": "按下按钮并说话...",
-  "what_are_you_looking_for": "你要买什么？",
+  "what_are_you_looking_for": "你在找什么？",
   "last_one_remaining": "还剩下最后一件事。",
   "hurry_up_and_come": "不要犹豫，快来吧。",
   "come_see": "快来看看。",
   "hurry_up": "快来吧。",
   "classify_fish": "对鱼进行分类。",
   "try_again": "再试一次。",
-  "try_gradually": "一点一点地尝试就好了。",
+  "try_gradually": "慢慢来，试试看。",
   "let_us_pick_citrus": "我们去摘橘子吧。",
   "potatoes_stacked": "土豆堆得很好。",
-  "goodbye": "我们走吧。",
+  "goodbye": "再见。",
   "where_from": "你从哪来？",
   "enjoy_meal": "慢慢吃，吃很多。",
   "great_job": "非常感谢您的辛勤工作。",
@@ -32,7 +32,7 @@
 
   "restaurant": "餐厅",
   "greetings": "问候",
-  "daily_life_work": "जीवन/काम",
+  "daily_life_work": "日常生活/工作",
   "shopping": "购物",
   "done": "完成",
 
@@ -42,5 +42,18 @@
   "dont_know": "不知道",
   "puppy": "小狗",
   "black_stone": "黑石",
-  "first": "首先"
+  "first": "首先",
+  
+  "walking_around": "走来走去",
+  "potato": "土豆",
+  "small_thing": "小东西",
+  "please_come_in": "请进",
+  "fish": "鱼",
+  "urchin_gathering": "海胆采集",
+  "going_now": "我现在要走了",
+  "eat_a_bit_then_go": "吃一点再走",
+  "hurry": "快点",
+  "walking_while_working": "边走边工作",
+  "cow_head": "牛头",
+  "soy_sauce": "酱油"
 }

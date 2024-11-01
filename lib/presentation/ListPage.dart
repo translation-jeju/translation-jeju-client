@@ -75,7 +75,8 @@ class _ListPageState extends ConsumerState<ListPage> {
                         bookmark: () async {
                           await postBookmark(
                               AppLocalizations.of(context)!.welcome.toString(),
-                              '혼저 옵서예', ref);
+                              '혼저 옵서예',
+                              ref);
                         },
                       ),
                       CustomListTile(
@@ -85,8 +86,11 @@ class _ListPageState extends ConsumerState<ListPage> {
                         sound: () => _speakText('폭삭 속암수다'),
                         bookmark: () async {
                           await postBookmark(
-                              AppLocalizations.of(context)!.great_job.toString(),
-                              '폭삭 속암수다', ref);
+                              AppLocalizations.of(context)!
+                                  .great_job
+                                  .toString(),
+                              '폭삭 속암수다',
+                              ref);
                         },
                       ),
                       CustomListTile(
@@ -96,8 +100,11 @@ class _ListPageState extends ConsumerState<ListPage> {
                         sound: () => _speakText('도르멍 하영 가쿠다'),
                         bookmark: () async {
                           await postBookmark(
-                              AppLocalizations.of(context)!.enjoy_meal.toString(),
-                              '도르멍 하영 가쿠다', ref);
+                              AppLocalizations.of(context)!
+                                  .enjoy_meal
+                                  .toString(),
+                              '도르멍 하영 가쿠다',
+                              ref);
                         },
                       ),
                       CustomListTile(
@@ -107,8 +114,11 @@ class _ListPageState extends ConsumerState<ListPage> {
                         sound: () => _speakText('어디서 옵데가?'),
                         bookmark: () async {
                           await postBookmark(
-                              AppLocalizations.of(context)!.where_from.toString(),
-                              '어디서 옵데가?', ref);
+                              AppLocalizations.of(context)!
+                                  .where_from
+                                  .toString(),
+                              '어디서 옵데가?',
+                              ref);
                         },
                       ),
                       CustomListTile(
@@ -119,7 +129,8 @@ class _ListPageState extends ConsumerState<ListPage> {
                         bookmark: () async {
                           await postBookmark(
                               AppLocalizations.of(context)!.goodbye.toString(),
-                              '게로마씸', ref);
+                              '게로마씸',
+                              ref);
                         },
                       ),
                     ],
@@ -140,8 +151,11 @@ class _ListPageState extends ConsumerState<ListPage> {
                         sound: () => _speakText('감저 저곡 해놨수다'),
                         bookmark: () async {
                           await postBookmark(
-                              AppLocalizations.of(context)!.potatoes_stacked.toString(),
-                              '감저 저곡 해놨수다', ref);
+                              AppLocalizations.of(context)!
+                                  .potatoes_stacked
+                                  .toString(),
+                              '감저 저곡 해놨수다',
+                              ref);
                         },
                       ),
                       CustomListTile(
@@ -152,8 +166,11 @@ class _ListPageState extends ConsumerState<ListPage> {
                         sound: () => _speakText('감결 딸라감쪄'),
                         bookmark: () async {
                           await postBookmark(
-                              AppLocalizations.of(context)!.let_us_pick_citrus.toString(),
-                              '감결 딸라감쪄', ref);
+                              AppLocalizations.of(context)!
+                                  .let_us_pick_citrus
+                                  .toString(),
+                              '감결 딸라감쪄',
+                              ref);
                         },
                       ),
                       CustomListTile(
@@ -163,8 +180,11 @@ class _ListPageState extends ConsumerState<ListPage> {
                         sound: () => _speakText('호꼼 씹서 해보난 좋수다'),
                         bookmark: () async {
                           await postBookmark(
-                              AppLocalizations.of(context)!.try_gradually.toString(),
-                              '호꼼 씹서 해보난 좋수다', ref);
+                              AppLocalizations.of(context)!
+                                  .try_gradually
+                                  .toString(),
+                              '호꼼 씹서 해보난 좋수다',
+                              ref);
                         },
                       ),
                       CustomListTile(
@@ -174,8 +194,11 @@ class _ListPageState extends ConsumerState<ListPage> {
                         sound: () => _speakText('고다시 가수다'),
                         bookmark: () async {
                           await postBookmark(
-                              AppLocalizations.of(context)!.try_again.toString(),
-                              '고다시 가수다', ref);
+                              AppLocalizations.of(context)!
+                                  .try_again
+                                  .toString(),
+                              '고다시 가수다',
+                              ref);
                         },
                       ),
                       CustomListTile(
@@ -185,8 +208,11 @@ class _ListPageState extends ConsumerState<ListPage> {
                         sound: () => _speakText('생이 갈라줘'),
                         bookmark: () async {
                           await postBookmark(
-                              AppLocalizations.of(context)!.classify_fish.toString(),
-                              '생이 갈라줘', ref);
+                              AppLocalizations.of(context)!
+                                  .classify_fish
+                                  .toString(),
+                              '생이 갈라줘',
+                              ref);
                         },
                       ),
                       CustomListTile(
@@ -197,7 +223,8 @@ class _ListPageState extends ConsumerState<ListPage> {
                         bookmark: () async {
                           await postBookmark(
                               AppLocalizations.of(context)!.hurry_up.toString(),
-                              '혼저혼저 오라게', ref);
+                              '혼저혼저 오라게',
+                              ref);
                         },
                       ),
                     ],
@@ -218,7 +245,8 @@ class _ListPageState extends ConsumerState<ListPage> {
                         bookmark: () async {
                           await postBookmark(
                               AppLocalizations.of(context)!.come_see.toString(),
-                              '왕방갑서', ref);
+                              '왕방갑서',
+                              ref);
                         },
                       ),
                       CustomListTile(
@@ -229,8 +257,11 @@ class _ListPageState extends ConsumerState<ListPage> {
                         sound: () => _speakText('몽케지 마랑 혼저 오라게'),
                         bookmark: () async {
                           await postBookmark(
-                              AppLocalizations.of(context)!.hurry_up_and_come.toString(),
-                              '몽케지 마랑 혼저 오라게', ref);
+                              AppLocalizations.of(context)!
+                                  .hurry_up_and_come
+                                  .toString(),
+                              '몽케지 마랑 혼저 오라게',
+                              ref);
                         },
                       ),
                       CustomListTile(
@@ -241,8 +272,11 @@ class _ListPageState extends ConsumerState<ListPage> {
                         sound: () => _speakText('매기 우다'),
                         bookmark: () async {
                           await postBookmark(
-                              AppLocalizations.of(context)!.last_one_remaining.toString(),
-                              '매기 우다', ref);
+                              AppLocalizations.of(context)!
+                                  .last_one_remaining
+                                  .toString(),
+                              '매기 우다',
+                              ref);
                         },
                       ),
                       CustomListTile(
@@ -253,8 +287,33 @@ class _ListPageState extends ConsumerState<ListPage> {
                         sound: () => _speakText('무신거 촞암수과'),
                         bookmark: () async {
                           await postBookmark(
-                              AppLocalizations.of(context)!.what_are_you_looking_for.toString(),
-                              '무신거 촞암수과', ref);
+                              AppLocalizations.of(context)!
+                                  .what_are_you_looking_for
+                                  .toString(),
+                              '무신거 촞암수과',
+                              ref);
+                        },
+                      ),
+                    ],
+                  ),
+                  ExpansionTile(
+                    backgroundColor: AppColors.subColor,
+                    collapsedBackgroundColor: AppColors.subColor,
+                    title: Text(
+                      AppLocalizations.of(context)?.greetings ?? '실생활 단어',
+                      style: FontStyles.smallBody,
+                    ),
+                    children: [
+                      CustomListTile(
+                        appWord:
+                            AppLocalizations.of(context)?.welcome ?? 'Welcome',
+                        jejuWord: '혼저 옵서예',
+                        sound: () => _speakText('혼저 옵서예'),
+                        bookmark: () async {
+                          await postBookmark(
+                              AppLocalizations.of(context)!.welcome.toString(),
+                              '혼저 옵서예',
+                              ref);
                         },
                       ),
                     ],
